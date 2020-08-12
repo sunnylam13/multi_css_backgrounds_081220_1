@@ -1,0 +1,980 @@
+////////////////////////////////////////////
+///// 		MIXINS PROJECT
+///////////////////////////////////////////////
+
+// all mixins that are not universal ones... that are specific to this project are placed here
+// don't forget to include the $ in front of the variables
+
+// ----------------------------------------
+// RESPONSIVE  ------------------
+// ----------------------------------------
+	/* 
+	* these are the project specific responsive mixins
+	* 
+	*/
+
+	@mixin max945px {
+		@media (max-width: 945px) {
+			@content; /* insert your own content */
+		}
+	}
+
+	@mixin min945px {
+		@media (min-width: 945px) {
+			@content; /* insert your own content */
+		}
+	}
+
+// ----------------------------------------
+// END RESPONSIVE  ------------------
+// ----------------------------------------
+
+// ----------------------------------------
+// HEADINGS  ------------------
+// ----------------------------------------
+
+	@mixin news_banner_title1 {
+		// for .new_readers_content .newsbanner .row .copy h2
+		// in case I use this else where
+		@include font-size(3);
+		font-weight: 600;
+		color: $color__text_newsbanner;
+	}
+
+// ----------------------------------------
+// END HEADINGS  ------------------
+// ----------------------------------------
+
+// ----------------------------------------
+// SPECIAL BUTTON STYLES  ------------------
+// ----------------------------------------
+
+	@mixin header_special_style1 {
+		// hand written element
+		font-family: $font__handwriter-header1;
+		text-transform: uppercase;
+		@include font-size($top_nav_social_media_font_size);
+		color: $color__text_social_media;
+	}
+
+	@mixin news_banner_style1 {
+		// the white text, blue background button
+		// for the a.readmore link
+		background: $color__button_newsbanner;
+		border: 1px solid transparent;
+		color: white;
+		padding: 10px 55px 10px 55px;
+		font-weight: lighter;
+		box-shadow: 0 2px 3px $color__charcoal;
+		@include font-size(0.9);
+		@include transitionEffectAllEaseIn(0.3s);
+		&:hover {
+			background: white;
+			color: $color__button_newsbanner;
+			border: 1px solid $color__button_newsbanner;
+			box-shadow: none;
+			font-weight: 600;
+		}
+	}
+
+	@mixin side_drawer_button_style1 {
+		// the semi-ghost button
+		// should be the same size as news_banner_style1
+		border: 1px solid white;
+		background: transparent;
+		padding: 10px 35px;
+		padding: 10px 55px 10px 55px;
+		color: white;
+		@include font-size(.875);
+		@include font-size(0.9);
+		font-weight: normal;
+		font-weight: lighter;
+		margin: 0 20px 0 0;
+		display: inline-block;
+		box-shadow: 0 2px 3px $color__charcoal;
+		@include transitionEffectAllEaseIn(0.3s);
+		&:hover {
+			color: $color__button_newsbanner;
+			border: 1px solid $color__button_newsbanner;
+			box-shadow: none;
+		}
+	}
+
+	@mixin masthead_submit_button_style1 {
+		// the white text, orange background button
+		// for masthead form submit
+		background: $color__back_masthead_subscribe_submit_button;
+		border: 1px solid transparent;
+		color: white;
+		padding: 10px 55px 10px 55px;
+		padding: 0.5em 1em 0.5em 1em;
+		font-weight: 500;
+		@include transitionEffectAllEaseIn(0.3s);
+		box-shadow: 0 2px 3px $color__charcoal;
+		&:hover {
+			background: white;
+			color: $color__back_masthead_subscribe_submit_button;
+			border: 1px solid $color__back_masthead_subscribe_submit_button;
+			box-shadow: none;
+		}
+	}
+
+// ----------------------------------------
+// END SPECIAL BUTTON STYLES  ------------------
+// ----------------------------------------
+
+// ----------------------------------------
+// LINK STYLES  ------------------
+// ----------------------------------------
+
+	@mixin topnav_link_style1 {
+		/* 
+		* this is for the nav.topnav .main-menu-container a
+		* 
+		*/
+
+		color: $color__text_top_nav;
+		font-weight: 100;
+		@include font-size(0.8);
+		// remove theme default background
+		background: none;
+		&:visited,&:link {
+			color: $color__text_top_nav;
+		}
+	}
+
+// ----------------------------------------
+// END LINK STYLES  ------------------
+// ----------------------------------------
+
+// ----------------------------------------
+// SEARCH FORMS  ------------------
+// ----------------------------------------
+
+	@mixin search_form_style1 {
+		/* 
+		* initially used...
+		* #header-one .header-bottom form#searchform
+		*
+		* WARNING:  must be used within form#searchform or just `form` if there are 2 of these search bars on the same page (since you can only use the ID once per page)
+		* 
+		*/
+		
+		@include sectionPaddingRightLeft(1em,1em);
+
+		position: relative;
+
+		// HOVER EFFECTS  ------------------------------------------------
+			
+			// when I hover over the form...  change the colour of the div background
+			&:hover > div.search-submit {
+				background: $color__search_submit_back;
+				border: none; // need to remove the border of the button by default so when you hover the outline doesn't show up
+			}
+
+			// when I hover over the form... change the colour of the icon...
+			&:hover > div > span.fa-search {
+				color: white;
+			}
+		// END HOVER EFFECTS ------------------------------------------------
+					
+		// SEARCH INPUT  ------------------------------------------------
+			input[type="search"] {
+				width: 100%;
+				border:none;
+				padding: 1.5em 1em 1.5em 1em;
+				padding: 1em 1em 1em 1em;
+				padding: 1em 2em 1em 2em;
+				padding: 1em 0 1em 2em;
+				border-left: $header_bottom_search_border_width solid $color__search_border;
+				border-right: $header_bottom_search_border_width solid $color__search_border;
+				background: $color__header_bottom_back;
+				color: $color__text_bottom_nav;
+
+				&::placeholder {
+					font-weight: 600;
+					@include font-size(1.2);
+				}
+			}
+
+			&:hover > input[type="search"]::placeholder {
+				color: $color__color__search_text_focused;
+			}
+		// END SEARCH INPUT ------------------------------------------------
+		
+		// SUBMIT BUTTON  ------------------------------------------------
+			
+			div.search-submit {
+				position: absolute;
+				// position: relative;
+				display: inline-block;
+				right: -1.2em;
+				bottom: 0; // stretch element to top edge
+				top: 0; // stretch element to bottom edge
+				right: -20px;
+				// height: 50px; // remove this otherwise you can't stretch
+				width: 50px;
+				// border:1px solid blue;
+				border: none;
+				background: transparent;
+				
+				@include flexboxColumn1;
+				justify-content: center;
+				align-content: center;
+				align-items: center;
+			}
+
+			input[type="submit"] {
+				// http://diythemes.com/thesis/rtfm/styling-wordpress-search-form/
+				position: absolute;
+				right: -1.2em;
+				bottom: 0;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 50px;
+				width: 50px;
+				width: 100%;
+				// padding:2px 1px 1px 1px;
+				border: none;
+
+				// background: $color__header_bottom_back;
+				background: transparent;
+				z-index: 5;
+				// color: $color__search_text_unfocused;
+			}
+			
+			span.fa-search {
+				// display: none;
+				right: 0.7em;
+				bottom: 0.4em;
+				right: -1.2em;
+				right: .55em;
+				bottom: 0;
+				bottom: .35em;
+				position: absolute;
+				@include font-size(1.5);
+				color: $color__search_text_unfocused;
+				z-index: 3;
+			}
+			
+		// END SUBMIT BUTTON ------------------------------------------------
+	}
+
+	@mixin search_input_style1 {
+		/* 
+		* originally extracted from search_form_style1
+		* you must use within an input element... whether text or email...
+		*/
+		
+		width: 100%;
+		border:none;
+		padding: 1em 0 1em 2em;
+		border-left: $header_bottom_search_border_width solid $color__search_border;
+		border-right: $header_bottom_search_border_width solid $color__search_border;
+		background: $color__header_bottom_back;
+		color: $color__text_bottom_nav;
+
+		&::placeholder {
+			font-weight: 600;
+			@include font-size(1.2);
+		}
+	}
+
+	@mixin search_input_style2 {
+		/* 
+		* originally extracted from search_form_style1
+		* you must use within an input element... whether text or email...
+		*/
+		
+		width: 100%;
+		border:none;
+		padding: 0.5em 0 0.8em 1em;
+		background: $color__header_bottom_back;
+		color: $color__text_bottom_nav;
+
+		&::placeholder {
+			font-weight: 400;
+			@include font-size(1.2);
+		}
+	}
+
+	@mixin search_form_style2 {
+		/* 
+		* initially used...
+		* #header-one .header-bottom form#searchform
+		* home.scss, home.php
+		*
+		* WARNING:  must be used within form#searchform or just `form` if there are 2 of these search bars on the same page (since you can only use the ID once per page)
+		*
+		* Works Best:
+		* home.scss, home.php
+		* 
+		*/
+		
+		@include sectionPaddingRightLeft(0em,0em);
+
+		width: 100%; // on the `form` element
+		position: relative;
+
+		// HOVER EFFECTS  ------------------------------------------------
+			
+			// when I hover over the form...  change the colour of the div background
+			&:hover > div.search-submit {
+				background: $color__search_submit_back;
+				border: none; // need to remove the border of the button by default so when you hover the outline doesn't show up
+			}
+
+			// when I hover over the form... change the colour of the icon...
+			&:hover > div > span.fa-search {
+				color: white;
+			}
+		// END HOVER EFFECTS ------------------------------------------------
+					
+		// SEARCH INPUT  ------------------------------------------------
+			input[type="search"] {
+				padding: 1em 0 1em 2em;
+				background: $color__header_bottom_back;
+				color: $color__text_bottom_nav;
+
+				width: 97%;
+				max-width: 97%;
+				border-left: none;
+				border-right: none;
+				border: 1px solid $color__border_library_tabs;
+
+				&::placeholder {
+					font-weight: 600;
+					@include font-size(1.2);
+				}
+			}
+
+			&:hover > input[type="search"]::placeholder {
+				color: $color__color__search_text_focused;
+			}
+		// END SEARCH INPUT ------------------------------------------------
+		
+		// SUBMIT BUTTON  ------------------------------------------------
+			
+			div.search-submit {
+				position: absolute;
+				// position: relative;
+				display: inline-block;
+				right: -1.2em;
+				bottom: 0; // stretch element to top edge
+				top: 0; // stretch element to bottom edge
+				right: -20px;
+				right: 2px;
+				// height: 50px; // remove this otherwise you can't stretch
+				width: 50px;
+				// border:1px solid blue;
+				border: none;
+				background: transparent;
+				
+				@include flexboxColumn1;
+				justify-content: center;
+				align-content: center;
+				align-items: center;
+			}
+
+			input[type="submit"] {
+				// http://diythemes.com/thesis/rtfm/styling-wordpress-search-form/
+				position: absolute;
+				right: -1.2em;
+				bottom: 0;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 50px;
+				width: 50px;
+				width: 100%;
+				// padding:2px 1px 1px 1px;
+				border: none;
+
+				// background: $color__header_bottom_back;
+				background: transparent;
+				z-index: 5;
+				// color: $color__search_text_unfocused;
+			}
+			
+			span.fa-search {
+				// display: none;
+				right: 0.7em;
+				bottom: 0.4em;
+				right: -1.2em;
+				right: .55em;
+				bottom: 0;
+				bottom: .35em;
+				position: absolute;
+				@include font-size(1.5);
+				color: $color__search_text_unfocused;
+				z-index: 3;
+			}
+			
+		// END SUBMIT BUTTON ------------------------------------------------
+	}
+
+// ----------------------------------------
+// END SEARCH FORMS  ------------------
+// ----------------------------------------
+
+// ----------------------------------------
+// TAB LABEL SYTLES  ------------------
+// ----------------------------------------
+	@mixin library_lcn_tabs_style1 {
+		border: 1px solid $color__border_library_tabs;
+		border-bottom: none;
+		color: $color__label_library_nav;
+	}
+// ----------------------------------------
+// END TAB LABEL SYTLES  ------------------
+// ----------------------------------------
+
+// ----------------------------------------
+// ARTICLES  ------------------
+// ----------------------------------------
+
+	@mixin latest_article_unit_base1 {
+		/* 
+		* this is to be inserted within an <article> element to work...
+		* 
+		*/
+
+		/* 
+		* NOTE:  the li is the actual unit... however we style the article...
+		* when applying flexbox you will apply flex child to the `li`
+		* NOTE:  no need to apply margin bottom on units since they'll be in the carousel as one row
+		*/
+
+		border-top: 2.5px solid $color__border_latest_article_unit;
+		background: $color__back_latest_article_unit;
+		padding: 2em;
+
+		border-bottom: 1px solid $color__border_latest_articles;
+
+		box-shadow: 0 2px 3px $color__charcoal;
+		
+		margin-bottom: 2em;
+		// @include sectionMarginsRightLeft(0,2em); // forget margin and let flexbox handle left right margins instead...
+
+		@include iphone6Plus414R {
+			min-width: 17em;
+			max-width: 19.5em;
+			padding: 0.6em;
+		}
+		@include applewatch275R {
+			min-width: 16em;
+			min-width: 14em;
+			max-width: 16.5em;
+		}
+
+		&:hover {
+			box-shadow: none;
+		}
+
+		h3 {
+			@include font-size(1.5);
+			margin-bottom: 0.5em;
+			a {
+				color: $color__text_latest_article_unit;
+				&:visited, &:link {
+					color: $color__text_latest_article_unit;
+				}
+			}
+		}
+
+		// META LINKS/TAGS  ------------------------------------------------
+			.meta-links {
+				margin-bottom: 0.5em;
+
+				@include iphone6Plus414R {
+					min-width: 17em;
+					max-width: 19.5em;
+				}
+				@include applewatch275R {
+					min-width: 14em;
+					max-width: 16.5em;
+				}
+			}
+
+			.meta-links a {
+				@include topnav_link_style1;
+				&::after {
+					content: '•';
+					margin: 0 3px 0 7px;
+				}
+			}
+
+			.meta-links a:last-child {
+				&::after {
+					content: '';
+				}
+			}
+		// END META LINKS/TAGS ------------------------------------------------
+		
+
+		// META CONTENT  ------------------------------------------------
+			.meta-content {
+				// flex parent
+				@include flexboxRow1;
+				justify-content: space-between;
+				align-content: space-between;
+				align-items: flex-start;
+				flex-flow: row nowrap;
+
+				// at these resolutions we're starting to turn the article elements into wide blocks so we can allow the elements to wrap...
+				@include iphone6Plus414R {
+					flex-flow: row wrap;
+				}
+				@include max320R {
+					flex-flow: row wrap;
+				}
+				@include applewatch275R {
+					flex-flow: row wrap;
+				}
+			}
+
+			.meta-content p {
+				// flex child
+				flex: 1 auto;
+				max-width: 60%;
+				// @include font-size(0.7);
+				color: $color__text_latest_article_unit;
+
+				@include iphone6Plus414R {
+					// display: block;
+					min-width: 17em;
+					// max-width: 19.5em;
+					max-width: 100%;
+					margin-bottom: 1em;
+				}
+				@include max320R {
+					max-width: 100%;
+					margin-bottom: 1em;
+				}
+				@include applewatch275R {
+					min-width: 14em;
+					// max-width: 16.5em;
+					max-width: 100%;
+				}
+			}
+
+			.meta-content img {
+				// flex child
+				flex: 1 auto;
+				max-width: 100px;
+				max-height: 100px;
+				border: 1px solid $color__border_latest_articles;
+
+				@include iphone6Plus414R {
+					// display: block;
+					min-width: 17em;
+					margin: 0;
+					// max-width: 19.5em;
+					max-width: 100%;
+				}
+				@include iphone6Plus414PortR {
+					// at certain portrait resolutions, allowing the picture to vertically stretch is okay...
+					// especially in situations where we've already made the elements into blocks...
+					max-height: 100%;
+				}
+				@include max320R {
+					margin: 0;
+				}
+				@include applewatch275R {
+					min-width: 14em;
+					// max-width: 16.5em;
+					max-width: 100%;
+				}
+			}
+		// END META CONTENT ------------------------------------------------
+	}
+
+	@mixin latest_article_unit_style1 {
+		/* 
+		* derived from front-page.scss .latest-articles-front-page
+		* this version assumes you're not sticking the `article` inside of a ul li setup...
+		* This is used primarily for the blog listing page home.php...
+		*/
+
+		h2 {
+			display: block;
+			text-align: center;
+			margin-bottom: 1em;
+		}
+
+		article {
+			@include latest_article_unit_base1;
+		}
+
+	}
+
+	@mixin latest_article_unit_style2 {
+		/* 
+		* derived from front-page.scss .latest-articles-front-page
+		* this version assumes you're not sticking the `article` inside of a ul li setup...
+		* used for:  `.archive-content-display` in `archive.scss` and `archive.php`...
+		*/
+
+		h2 {
+			display: block;
+			text-align: center;
+			margin-bottom: 1em;
+		}
+
+		article {
+			@include latest_article_unit_base1;
+
+			/* 
+			* since the archive page is not using <ul> and <li> the margin changes are being applied directly to the <article> unlike front-page.php or home.php...
+			* 
+			*/
+			@media (min-width: 721px) and (max-width: 736px) {
+				margin-left: 10.65em;
+			}
+			@media (min-width: 668px) and (max-width: 720px) {
+				margin-left: 10.45em;
+			}
+			@media (min-width: 601px) and (max-width: 667px) {
+				margin-left: 8.65em;
+			}
+			@media (min-width: 569px) and (max-width: 600px) {
+				margin-left: 6.65em;
+			}
+			@media (min-width: 481px) and (max-width: 568px) {
+				margin-left: 5.65em;
+			}
+			@media (min-width: 415px) and (max-width: 480px) {
+				margin-left: 2.65em;
+			}
+			@media (min-width: 376px) and (max-width: 414px) {
+				margin-left: 2.3em;
+			}
+			@media (min-width: 321px) and (max-width: 375px) {
+				margin-left: 1em;
+			}
+			
+			// flex child
+			flex: 1 auto;
+			max-width: 33.333333333%;
+			max-width: 32%;
+			// if jcarousel used, a % would make it massive...  give it a set width of at least 361px
+			max-width: 361px;
+
+			// META CONTENT  ------------------------------------------------
+				.meta-content {
+					flex-flow: row wrap;
+				}
+
+				.meta-content p {
+					@include iphone6Plus414PortR {
+						max-width: 100%;
+					}
+				}
+
+				.meta-content img {
+					// max-width: 150px;
+					max-width: 33.333333333%;
+					@include iphone6Plus414PortR {
+						max-width: 100%;
+					}
+					
+				}
+			// END META CONTENT ------------------------------------------------
+			
+		}
+
+	}
+
+// ----------------------------------------
+// END ARTICLES  ------------------
+// ----------------------------------------
+
+// ----------------------------------------
+// DOWNLOAD BOX STYLES  ------------------
+// ----------------------------------------
+
+	@mixin download_box_base_style_1 {
+		@include flexboxRow1;
+		justify-content: space-between;
+		align-content: space-between;
+		align-items: flex-start;
+		border: 5px solid black;
+		padding: 2em;
+		@include sectionMargins041515(1.5em,1.5em);
+		h2 {
+			text-align: center;
+			@include font-size(2.10);
+			display: block;
+			width: 100%;
+			margin-top: 0;
+		}
+	}
+
+// ----------------------------------------
+// END DOWNLOAD BOX STYLES  ------------------
+// ----------------------------------------
+
+// ----------------------------------------
+// COMMON STYLES  ------------------
+// ----------------------------------------
+	@mixin htdf-common-styles-1 {
+		/* 
+		* this mixin should be placed the near the top of the containing parent so later styles can override...
+		* 
+		*/
+	
+		@include font-size(1.2);
+		p,span,li {
+			@include font-size(1.2);
+		}
+		ul {
+			@include sectionMargins041515(1.5em,1.5em);
+		}
+		// Markdown conversion in WP sometimes add <br> between elements...
+		br {
+			display: none;
+		}
+
+		// HEADINGS  ------------------------------------------------
+			h1,h2 {
+				text-align: center;
+				margin: 2em 0 2em 0;
+				display: block;
+			}
+		// END HEADINGS ------------------------------------------------
+		
+		// IMAGES  ------------------------------------------------
+			img {
+				// max-width: 19.5em;
+				max-width: 100%; // make this default, change its size elsewhere...
+				max-height: 100%;
+				// margin: 1.5em;
+				@include max800R {
+					// float: none;
+					// display: block;
+					// margin: 1.5em 0 1.5em 0;
+					// max-width: 100%;
+					// display: block;
+					// margin: 0;
+					text-align: center;
+				}
+				@include max600R {
+					float: none;
+					// display: block;
+					margin: 1.5em 0 1.5em 0;
+					max-width: 100%;
+					display: block;
+				}
+			}
+		// END IMAGES ------------------------------------------------
+		
+	}
+
+	@mixin htdf-sales-vsl-page-styles-1 {
+		/* 
+		* this mixin is used for...
+			* sales.page.htdf.111215.1.php
+			* vsl.page.htdf.111215.1.php
+		* 
+		*/
+
+		@include htdf-common-styles-1;
+
+		/* 
+		* tighten the text
+		*/
+
+		margin: 0 auto;
+		max-width: 940px;
+		max-width: 945px;
+		padding: 1em;
+
+		// ----------------------------------------
+		// HEADINGS  ------------------
+		// ----------------------------------------
+			
+			h3 {
+				@include sectionMargins041515(1.5em,1.5em);
+				font-weight: bold;
+				font-style: italic;
+				text-decoration: underline;
+			}
+
+			// teaser
+			h3:nth-of-type(1) {
+				text-align: center;
+				span {
+					text-decoration: underline;
+					@include font-size(1.5);
+					@include phoneR {
+						@include font-size(0.9);
+					}
+				}
+			}
+			
+			// headline
+			h1 {
+				@include font-size(3.25);
+				@include sectionMargins041515(1em,1em);
+				color: $color__htdf-sales-page-headline;
+				@include phoneR {
+					@include sectionMargins041515(0.5em,0.5em);
+					@include font-size(2.25);
+				}
+			}
+
+			// sub headline
+			h1 + h2 {
+				@include font-size(2);
+				@include phoneR {
+					@include font-size(1);
+				}
+			}
+
+			h2 {
+				color: $color__htdf-sales-page-headline;
+			}
+		// ----------------------------------------
+		// END HEADINGS  ------------------
+		// ----------------------------------------
+		
+		// ----------------------------------------
+		// GUARANTEES  ------------------
+		// ----------------------------------------
+			.htdf-guarantee-one {
+				text-align: center;
+				@include flexboxColumn1;
+				justify-content: center;
+				align-content: center;
+				align-items: center;
+				img {
+					max-width: 100%;
+				}
+			}
+			
+		// ----------------------------------------
+		// END GUARANTEES  ------------------
+		// ----------------------------------------
+		
+		// ----------------------------------------
+		// BUY NOW BUTTON  ------------------
+		// ----------------------------------------
+			/* 
+			* leave this code near the end to overwrite the max-width on the `img` element that was done above...
+			* 
+			*/
+		
+			.buy-now-button-holding-box {
+				text-align: center;
+				@include sectionMargins041515(3em,3em);
+
+				a {
+					// this holds the pieces
+					@include flexboxColumn1;
+					justify-content: center;
+					align-content: center;
+					align-items: center;
+					
+				}
+
+				a img {
+					margin: 0 0 1em 0;
+					max-width: 433px;
+					@include phoneR {
+						max-width: 100%;
+					}
+				}
+			}
+
+			// for use with Javascript
+			.buy-now-button-holding-box-hidden {
+				display: none;
+			}
+
+			.buy-now-button-holding-box-reveal {
+				display: block;
+			}
+
+		// ----------------------------------------
+		// END BUY NOW BUTTON  ------------------
+		// ----------------------------------------
+		
+	}
+
+	@mixin footer-any-landing-page-style-1 {
+		/* 
+		* NOTE:  to be placed within a footer element...
+		* background can be adjusted in individual sections...
+		* 
+		*/
+	
+		margin-top: 5em;
+		padding: 1em 0 1em 0;
+
+		// ----------------------------------------
+		// DISCLAIMER  ------------------
+		// ----------------------------------------
+			aside {
+				@include sectionMargins041515(1.5em,1.5em);
+				
+				p {
+					@include font-size(0.5);
+					line-height: 1rem;
+					margin-bottom: 6px;
+				}
+			}
+		// ----------------------------------------
+		// END DISCLAIMER  ------------------
+		// ----------------------------------------
+
+		// ----------------------------------------
+		// NAV MENU  ------------------
+		// ----------------------------------------
+			nav {
+				@include sectionMargins041515(1.5em,1.5em);
+
+				ul {
+					@include flexboxRow1;
+					justify-content: space-between;
+					align-content: space-between;
+					align-items: center;
+				}
+
+				ul li {
+					flex: 1 auto;
+
+					@include flexboxColumn1;
+					justify-content: center;
+					align-content: center;
+					align-items: center;
+				}
+
+				li a {
+					@include font-size(0.7);
+				}
+			}
+		// ----------------------------------------
+		// END NAV MENU  ------------------
+		// ----------------------------------------
+		
+		// ----------------------------------------
+		// COPYRIGHT NAME DATE  ------------------
+		// ----------------------------------------
+			.copyright-name-date-year-one {
+				display: block;
+				text-align: center;
+				@include font-size(0.7);
+			}
+		// ----------------------------------------
+		// END COPYRIGHT NAME DATE  ------------------
+		// ----------------------------------------
+	}
+// ----------------------------------------
+// END COMMON STYLES  ------------------
+// ----------------------------------------
+
+
+///////////////////////////////////////////////

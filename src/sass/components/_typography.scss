@@ -1,0 +1,368 @@
+/* 
+* If you're seeking the actual variables for colours, please see _variables-site.scss...
+* 
+*/
+
+////////////////////////////////////////////
+///// 		IMPORTS
+///////////////////////////////////////////////
+
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+// <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+// <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+// font-family: 'Lato', sans-serif;
+// @import url("http://fonts.googleapis.com/css?family=Lato:400,700,900");
+
+// <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,700,800,400' rel='stylesheet' type='text/css'>
+// font-family: 'Open Sans', sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600,700,800,400");
+
+// <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+@import url("https://fonts.googleapis.com/css?family=Oswald:700");
+
+// ----------------------------------------
+// HANDWRITING FONT  ------------------
+// ----------------------------------------
+	// <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+	// font-family: 'Shadows Into Light', cursive;
+	@import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light");
+	
+// ----------------------------------------
+// END HANDWRITING FONT  ------------------
+// ----------------------------------------
+
+
+
+///////////////////////////////////////////////
+///// 		END IMPORTS
+///////////////////////////////////////////////
+
+
+////////////////////////////////////////////
+// 		ADDITIONAL TYPOGRAPHY DEFAULTS
+////////////////////////////////////////////
+// from my non-WP template
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, main, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	margin: 0;
+	padding: 0; 
+	background: transparent;
+}
+
+body {
+	font-family: $font__main;
+	@include font-size(1);
+	@include line-height(1.2);
+	background: $color__background-body;
+	position: relative;
+	// z-index: 10;
+}
+
+html, body {
+	// reference:  Create scrollable content for a fixed 100% height div - https://stackoverflow.com/questions/16772034/create-scrollable-content-for-a-fixed-100-height-div
+	// you must set html and body to 100% for a fixed element to scroll with height 100%
+	height: 100%;
+	position: relative;
+	z-index: -1;
+}
+
+// ----------------------------------------
+// WRAPPER/CONTAINER  ------------------
+// ----------------------------------------
+	/* 
+	* NOTE:  hackeryou.061615.1.scss has .container which does the same thing...
+	* 
+	*/
+
+	.wrapper {
+		max-width: 1200px;
+		margin: 0 auto;
+		position: relative;
+		// z-index: 10;
+		
+		@include desktopRHD1280Max {
+			padding: 0 1em 0 1em; // apply padding to the wrapper and you don't have to pad/margin the individual elements as the screen size shrinks
+		}
+		// @include desktopRHD1024t1280 {
+		// 	padding: 0 1em 0 1em; // apply padding to the wrapper and you don't have to pad/margin the individual elements as the screen size shrinks
+		// }
+	}
+
+	// this is the version which over-writes the one in first loaded file...
+	.container {
+	  max-width:1200px;
+	  margin:0 auto;
+	}
+// ----------------------------------------
+// END WRAPPER/CONTAINER  ------------------
+// ----------------------------------------
+
+ol, ul {
+	list-style: none;
+	// lists have mysterious padding
+	@include marginPaddingReset1;
+}
+
+// for some mysterious reason a dot kept appearing in the header fixed nav menu so I decided to set that global li's would be default list-style-type: none unless specified otherwise.
+
+li {
+	list-style-type: none;
+}
+
+p {
+	// to adjust this change the mixin
+	// @include baseParagraphStyle;
+	color: $color__text-main;
+	@include font-size(0.9);
+	margin-bottom: 1.5%;
+}
+
+a {
+	text-decoration: none;
+
+	// DEFAULTS
+	// specific for this project
+	// default colour... from index.scss
+	color: $color__links_index_php;
+	@include transitionEffectAllEaseIn(0.3s);
+	
+	&:visited,&:link {
+		color: $color__links_index_php;
+	}
+	&:hover {
+		color: $color__deep_carrot_orange;
+	}
+}
+
+ul, span {
+	@include marginPaddingReset1;
+	@include font-size(0.9);
+}
+
+progress {
+	/* Reset the default appearance */
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+// remove default styling of buttons
+button {
+	outline: none;
+	border: none;
+	background: none;
+	box-shadow: none;
+	text-shadow: none;
+	padding: 0;
+	margin: 0;
+}
+
+// blockquote won't work unless it's inside something else especially to see the quote icon
+blockquote {
+	position: relative;
+	color: $color__text-blockquote;
+	padding-left: 3em;
+	font-style: italic;
+	// blockquote text is actually wrapped by p element
+	p {
+		color: $color__text-blockquote;
+	}
+	&::before {
+		position: absolute;
+		@include beforeAfterIconPlace042215a('\f10d');
+		@include font-size(1.8);
+		top: 0;
+		left: 0;
+	}
+}
+
+code {
+	// converting to an inline block and then apply margin-left works
+	display: inline-block;
+	@include marginPaddingReset1;
+	// margin-left: 3em; // using margin-left for inline code messes things up
+  background-color:#EEEEEE;
+  color: black;
+  color: lighten(black,35%);
+  font-family: $font__code;
+}
+
+pre {
+	font-family: $font__pre;
+	color: lighten(black,35%);
+}
+
+////////////////////////////////////////////
+// 		END ADDITIONAL TYPOGRAPHY DEFAULTS
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+///// 		HEADINGS
+///////////////////////////////////////////////
+
+	h1 {
+		@include font-size(2);
+	}
+
+	h2 {
+		@include font-size(1.5);
+	}
+
+	h3 {
+		@include font-size(1);
+	}
+
+	h4 {
+		@include font-size(0.9);
+	}
+
+	h5 {
+		@include font-size(0.8);
+	}
+
+	h6 {
+		@include font-size(0.7);
+	}
+
+///////////////////////////////////////////////
+///// 		END HEADINGS
+///////////////////////////////////////////////
+
+////////////////////////////////////////////
+// 		BEM STYLE
+////////////////////////////////////////////
+
+// for displaying which php files show up on pages
+// sometimes for clarifying results of get_template_part
+// this is to be applied to a <p> tag for example... "This is the XX.php page."
+.wpPHPLocation {
+	color: red;
+	font-weight: bold;
+	background: blue;
+	opacity: 0.3;
+
+	// DEFAULT DISPLAY STATUS
+	// during development set it to display: inline
+	// when going live set this to display: none
+	display: none;
+}
+
+.redHighlight {
+	color: $color__htdf-sales-page-red-highlight;
+}
+.blueHighlight {
+	color: blue;
+}
+.yellowHighlight {
+	color: yellow;
+}
+.boldIt {
+	font-weight: bold;
+}
+.italicIt {
+	font-style: italic;
+}
+.underlineIt {
+	text-decoration: underline;
+}
+.yellowHighlightPen {
+	// background: yellow;
+	background: $color__dmb-yellow-highlight-pen;
+}
+.orangeHighlightPen {
+	// background: yellow;
+	background: $color__dmb-orange-highlight-pen;
+}
+
+////////////////////////////////////////////
+// 		END BEM STYLE
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+///// 		JETPACK MARKDOWN CORRECTIONS
+///////////////////////////////////////////////
+
+	/* 
+	* this is required since JetPack surrounds all Markdown with `p` elements...
+	* 
+	*/
+
+	p > em {
+		font-style: italic;
+	}
+
+	p > strong {
+		font-weight: bold;
+	}
+
+///////////////////////////////////////////////
+///// 		END JETPACK MARKDOWN CORRECTIONS
+///////////////////////////////////////////////
+
+////////////////////////////////////////////
+///// 		PROJECT SPECIFIC ALTERATIONS
+///////////////////////////////////////////////
+
+	h2 {
+		font-weight: bold;
+	}
+
+	.italicit {
+		font-style: italic;
+	}
+
+	.boldit {
+		font-weight: bold;
+	}
+
+	.redlit {
+		color: red;
+		color: #ee5730; /* flamingo */
+		color:  $color__htdf-sales-page-red-highlight;
+	}
+
+	.yellowhighlight {
+		background: yellow;
+	}
+
+	.all-caps-one {
+		text-transform: uppercase;
+	}
+
+	li {
+		margin-bottom: 0.5em;
+	}
+
+	// a:hover {
+	// 	color: #f06c30;
+	// }
+
+	h1, h2, h3, h4, h5, h6 {
+		text-align: center;
+	}
+
+	/* 
+	* this is used to clear areas so that even floating images don't overlap at all...
+	* serves as an invisible horizontal line...
+	*
+	* html
+		* <div class="break-this-up-line"></div>
+	* 
+	*/
+	.break-this-up-line {
+		width: 100%;
+		visibility: hidden;
+		clear: both;
+	}
+
+	.float-right-image {
+		float: right;
+	}
+
+///////////////////////////////////////////////
+///// 		END PROJECT SPECIFIC ALTERATIONS
+///////////////////////////////////////////////

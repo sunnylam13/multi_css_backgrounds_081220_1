@@ -1,0 +1,371 @@
+////////////////////////////////////////////
+///// 		COLOURS
+///////////////////////////////////////////////
+
+	// ----------------------------------------
+	// COLOUR SWATCH  ------------------
+	// ----------------------------------------
+		$color__charcoal: #424242;
+		$color__charcoal_shade1: rgba(66,66,66,0.6);
+		$color__charcoal_shade2: rgba(66,66,66,0.8);
+		$color__flamingo: #EE5730;
+		$color__silversand: #BCBCBC;
+		$color__concrete: #F4F4F4;
+		$color__boston_blue: #3A9AC0;
+		$color__pelorous: #3B9CC3;
+		// $color__pelorous: #F06C30;
+		$color__deep_carrot_orange: #F06C30;
+		// $color__deep_carrot_orange: #3B9CC3;
+		$color__cognac: #AC451F;
+		$color__orient: #236279;
+		$color__silver_sand: #BCBCBC;
+		$color__gallery: #F0F0F0;
+		$color__well-read: #BE2F2F;
+	// ----------------------------------------
+	// END COLOUR SWATCH  ------------------
+	// ----------------------------------------
+
+	$color__background-body: white;
+
+	$color__text-main: black;
+	$color__text-blockquote: black;
+
+	// ----------------------------------------
+	// SOCIAL MEDIA COLOURS  ------------------
+	// ----------------------------------------
+		$color__back_twitter: #3EA9E0;
+		$color__back_facebook: #3A5998;
+		$color__back_pinterest: #C43C2B;
+		$color__back_googleplus: #D14835;
+		$color__back_linkedin: #2B80B1;
+	// ----------------------------------------
+	// END SOCIAL MEDIA COLOURS  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// HEADER  ------------------
+	// ----------------------------------------
+		
+		$color__border_header_one: lighten($color__charcoal,35%);
+
+		// NEW READERS SECTION  ------------------------------------------------
+
+			// ................... NEWS BANNER...................
+				$color__text_newsbanner: $color__boston_blue;
+				$color__button_newsbanner: $color__pelorous;
+			// ...................END NEWS BANNER ...................
+
+			// ................... GREAT POSTS...................
+				$color__back_great_posts: $color__deep_carrot_orange;
+			// ...................END GREAT POSTS ...................
+			
+
+		// END NEW READERS SECTION ------------------------------------------------
+
+		// SIDE DRAWER AREA  ------------------------------------------------
+			$color__back_side_drawer: $color__pelorous;
+			$color__back_special_content: $color__charcoal;
+		// END SIDE DRAWER AREA ------------------------------------------------
+
+		// MOBILE MENU ONE  ------------------------------------------------
+			$color__mobile_menu_one: $color__pelorous;
+			$color__mobile_menu_one: $color__charcoal;
+			$color__back_mobile_menu_one_link_hover: $color__pelorous;
+			$color__back_mobile_menu_one_link_hover: darken($color__charcoal,15%);
+		// END MOBILE MENU ONE ------------------------------------------------
+
+		// HEADER TOP  ------------------------------------------------
+			$color__text_top_nav: $color__flamingo;
+			$color__header_top_back: $color__charcoal;
+			$color__text_social_media: $color__silversand;
+			$color__border_header_top: $color__deep_carrot_orange;
+			$color__back_new_reader_button_circle: $color__cognac;
+
+			// ................... MOBILE MENU ONE BUTTON LABEL ...................
+				$color__text_mobile_menu_one: $color__deep_carrot_orange;
+			// ...................END MOBILE MENU ONE BUTTON LABEL ...................
+			
+		// END HEADER TOP ------------------------------------------------
+
+		// HEADER TOP SUB MENU  ------------------------------------------------
+			$color__back_header_top_sub_menu: $color__silversand;
+			$color__text_header_top_sub_menu: $color__charcoal;
+			$color__text_header_top_sub_menu_hover: white;
+		// END HEADER TOP SUB MENU ------------------------------------------------
+
+		// HEADER BOTTOM  ------------------------------------------------
+			// $color__header_bottom_back: $color__concrete; // this one's too light
+			$color__header_bottom_back: darken($color__concrete,8%);
+			$color__text_bottom_nav: $color__charcoal;
+			$color__text_bottom_nav_hover: $color__deep_carrot_orange;
+			
+			// ................... SEARCH...................
+				$color__search_border: white;
+				$color__search_text_unfocused: darkgrey;
+				$color__search_submit_back: lightgrey;
+				$color__color__search_text_focused: $color__charcoal;
+			// ...................END SEARCH ...................
+			
+			// ................... SIDE DRAWER BUTTON...................
+				$color__back_side_drawer_button: $color__boston_blue;
+				$color__back_side_drawer_button_circle: $color__orient;
+			// ...................END SIDE DRAWER BUTTON ...................
+		
+		// END HEADER BOTTOM ------------------------------------------------
+
+		// HEADER BOTTOM SUB MENU  ------------------------------------------------
+			$color__back_header_bottom_sub_menu: $color__header_bottom_back;
+			$color__text_header_bottom_sub_menu: $color__text_bottom_nav;
+			$color__text_header_bottom_sub_menu_hover: $color__text_bottom_nav_hover;
+		// END HEADER BOTTOM SUB MENU ------------------------------------------------
+		
+	// ----------------------------------------
+	// END HEADER  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// SIDEBAR  ------------------
+	// ----------------------------------------
+		
+		// GENERAL  ------------------------------------------------
+			$color__border_sidebar_aside: lighten($color__charcoal,35%);
+		// END GENERAL ------------------------------------------------
+		
+		// SEARCH  ------------------------------------------------
+			$color__back_sidebar_search_button: $color__silversand;
+		// END SEARCH ------------------------------------------------
+		
+		// TESTIMONIALS  ------------------------------------------------
+			$color__back_testimonials_widget: $color__concrete;
+			$color__text_testimonials_client_name: $color__pelorous;
+		// END TESTIMONIALS ------------------------------------------------
+		
+		// EMAIL SIGN UP  ------------------------------------------------
+			$color__back_sidebar_email_optin: $color__silver_sand;
+			$color__back_sidebar_email_optin_form: $color__gallery;
+		// END EMAIL SIGN UP ------------------------------------------------
+
+		// FACEBOOK BADGE AREA  ------------------------------------------------
+			$color__border_facebook_iframe: #E9EAED;
+		// END FACEBOOK BADGE AREA ------------------------------------------------
+
+	// ----------------------------------------
+	// END SIDEBAR  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// INDEX.PHP  ------------------
+	// ----------------------------------------
+		$color__links_index_php: $color__pelorous;
+		$color__links_index_php_hover: $color__deep_carrot_orange;
+	// ----------------------------------------
+	// END INDEX.PHP  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// FRONT PAGE/HOME PAGE  ------------------
+	// ----------------------------------------
+
+		// MASTHEAD/BANNER  ------------------------------------------------
+			$color__text_masthead_aside: $color__charcoal;
+			$color__back_masthead_subscribe: $color__charcoal_shade1;
+			$color__back_masthead_subscribe_submit_button: $color__deep_carrot_orange;
+			$color__text_masthead_subscribe_input: darken($color__concrete,25%);
+		// END MASTHEAD/BANNER ------------------------------------------------
+
+		// WHY  ------------------------------------------------
+			$color__back_why: $color__deep_carrot_orange;
+		// END WHY ------------------------------------------------
+
+		// CLIENTS  ------------------------------------------------
+			$color__text_news_h6: $color__silver_sand;
+			$color__back_clients: $color__concrete;
+		// END CLIENTS ------------------------------------------------
+
+		// LATEST ARTICLES  ------------------------------------------------
+			$color__border_latest_articles: lighten($color__charcoal,35%);
+			$color__border_latest_article_unit: $color__deep_carrot_orange;
+			$color__back_latest_article_unit: $color__concrete;
+			$color__text_latest_article_unit: $color__charcoal;
+		// END LATEST ARTICLES ------------------------------------------------
+
+		// ITEM SECTION  ------------------------------------------------
+			$color__back_item_section: $color__concrete;
+			$color__border_item_unit: $color__border_latest_articles;
+		// END ITEM SECTION ------------------------------------------------
+
+		// FIND SECTION  ------------------------------------------------
+			$color__back_find_section_shader: $color__charcoal_shade2;
+		// END FIND SECTION ------------------------------------------------
+
+		// SUBSCRIBE - BOTTOM  ------------------------------------------------
+			$color__back_subscribe: $color__silversand;
+		// END SUBSCRIBE - BOTTOM ------------------------------------------------
+
+	// ----------------------------------------
+	// END FRONT PAGE/HOME PAGE  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// BLOG PAGE/HOME.PHP  ------------------
+	// ----------------------------------------
+		$color__border_blog_page: lighten($color__charcoal,35%);
+		$color__span_library_banner_heading: $color__deep_carrot_orange;
+		$color__blog_page_bottom_back: $color__concrete;
+
+		// LIBRARY NAVIGATION  ------------------------------------------------
+			$color__border_library_tabs: $color__silver_sand;
+			$color__label_library_nav: $color__deep_carrot_orange;
+		// END LIBRARY NAVIGATION ------------------------------------------------
+		
+	// ----------------------------------------
+	// END BLOG PAGE/HOME.PHP  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// ARCHIVES  ------------------
+	// ----------------------------------------
+		/* 
+		* this area may include variables for:  archive.php, tag.php, category.php
+		* 
+		*/
+
+		$color__text_archive_heading: $color__deep_carrot_orange;
+		$color__border_archive_heading: lighten($color__charcoal,35%);
+		$color__border_archive_top: lighten($color__charcoal,35%);
+		$color__back_archive_widget_section: darken($color__concrete,8%);
+
+		$color__link_archive_widget_section: $color__deep_carrot_orange;
+		$color__link_archive_widget_section_hover: $color__pelorous;
+	// ----------------------------------------
+	// END ARCHIVES  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// COMMENTS  ------------------
+	// ----------------------------------------
+		$color__border_comment_article: darken($color__concrete,8%);
+		$color__links_comments: $color__deep_carrot_orange;
+	// ----------------------------------------
+	// END COMMENTS  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// FOOTER  ------------------
+	// ----------------------------------------
+		$color__back_footer: $color__charcoal;
+		$color__links_footer: $color__deep_carrot_orange;
+		$color__border_footer: $color__deep_carrot_orange;
+	// ----------------------------------------
+	// END FOOTER  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// SALES PAGE HTDF 111215.1  ------------------
+	// ----------------------------------------
+		$color__htdf-sales-page-red-highlight: red;
+		$color__htdf-sales-page-headline: $color__pelorous;
+	// ----------------------------------------
+	// END SALES PAGE HTDF 111215.1  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// SALES PAGE HTDF LETTER 110916-1  ------------------
+	// ----------------------------------------
+		$color__dmb-yellow-highlight-pen: #F8FA66;
+		$color__dmb-orange-highlight-pen: #FFD800; 
+	// ----------------------------------------
+	// END SALES PAGE HTDF LETTER 110916-1  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// VSL  ------------------
+	// ----------------------------------------
+		$color__htdf-vsl-page-heading-one: $color__flamingo;
+		$color__back-htdf-vsl-teaser-heading: $color__pelorous;
+		$color__border-htdf-vsl-video-frame: $color__boston_blue;
+	// ----------------------------------------
+	// END VSL  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// THANK YOU PAGE HTDF 111215.1  ------------------
+	// ----------------------------------------
+		$color__back_logo_htdf-thanks: $color__charcoal;
+		$color__htdf-thanks-action-heading: $color__flamingo;
+	// ----------------------------------------
+	// END THANK YOU PAGE HTDF 111215.1  ------------------
+	// ----------------------------------------
+	
+	// ----------------------------------------
+	// SQUEEZE OPT IN PAGE V111515.1  ------------------
+	// ----------------------------------------
+		$color__squeeze-page-white-one-hr-line: #E6E6E6;
+		$color__squeeze-page-white-one-optin-form-border: #E6E6E6;
+	// ----------------------------------------
+	// END SQUEEZE OPT IN PAGE V111515.1  ------------------
+	// ----------------------------------------
+
+///////////////////////////////////////////////
+///// 		END COLOURS
+///////////////////////////////////////////////
+
+////////////////////////////////////////////
+///// 		TYPOGRAPHY
+///////////////////////////////////////////////
+	$font__main: 'Open Sans',sans-serif;
+	$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	// $font__code: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+	$font__pre: "Courier 10 Pitch", Courier, monospace;
+	$font__line-height-body: 1.5;
+	$font__line-height-pre: 1.6;
+
+	// font-family: 'Shadows Into Light', cursive;
+	$font__handwriter-header1: 'Shadows Into Light', cursive;
+
+	$font__squeeze-page-white-one-title-heading: 'Oswald', sans-serif;
+
+///////////////////////////////////////////////
+///// 		END TYPOGRAPHY
+///////////////////////////////////////////////
+
+////////////////////////////////////////////
+///// 		STRUCTURE
+///////////////////////////////////////////////
+
+	// ----------------------------------------
+	// HEADER  ------------------
+	// ----------------------------------------
+		$top_nav_social_media_font_size: 1.2;
+		$header_bottom_search_border_width: 5px;
+	// ----------------------------------------
+	// END HEADER  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// SIDE DRAWER  ------------------
+	// ----------------------------------------
+		$side_drawer_width: 40.3125em;
+	// ----------------------------------------
+	// END SIDE DRAWER  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// MOBILE MENU ONE  ------------------
+	// ----------------------------------------
+		$mobile_menu_one_width: 24.5em;
+	// ----------------------------------------
+	// END MOBILE MENU ONE  ------------------
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// BLOG PAGE/HOME.PHP  ------------------
+	// ----------------------------------------
+		$library_banner_h2: 2;
+	// ----------------------------------------
+	// END BLOG PAGE/HOME.PHP  ------------------
+	// ----------------------------------------
+
+///////////////////////////////////////////////
+///// 		END STRUCTURE
+///////////////////////////////////////////////

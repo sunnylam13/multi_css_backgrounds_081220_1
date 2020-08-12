@@ -1,0 +1,54 @@
+/* 
+* main file
+* 
+*/
+
+/*================================================
+BENEFITS BANNERS
+=================================================*/
+
+	.benefits-banner {
+		color: white;
+	}
+
+		.benefits-banner-one {}
+
+		.benefits-banner-two {}
+
+		.benefits-banner-three {}
+
+/*================================================
+END BENEFITS BANNERS
+=================================================*/
+
+/*================================================
+BENEFIT TRIPLETS - BENEFITS HIGHLIGHTS
+=================================================*/
+
+.benefits-highlight-one {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+
+	
+}
+
+/*================================================
+END BENEFIT TRIPLETS - BENEFITS HIGHLIGHTS
+=================================================*/
+
+/*================================================
+MODULES & BONUSES
+=================================================*/
+
+	.module-desc h3, .bonus-desc h3 {
+		text-transform: uppercase;
+		color: #ee5730; /* flamingo */
+		text-align: left;
+	}
+
+/*================================================
+END MODULES & BONUSES
+=================================================*/

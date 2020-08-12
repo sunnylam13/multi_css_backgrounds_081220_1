@@ -4,6 +4,12 @@
 * we're going to write in standard CSS to avoid confusion for those who don't know SASS
 */
 
+.background_viewbox .wrapper {
+	width:100%;
+	height: 15em;
+	@include flexboxColumn1;
+}
+
 /* Background Example 01 START */
 /* example 
 2 background layers, each positioned differently
@@ -13,9 +19,9 @@
 	border: solid blue 2px;
 }
 .background_example_01 .wrapper {
-	width:100%;
-	height: 15em;
-	@include flexboxColumn1;
+	// width:100%;
+	// height: 15em;
+	// @include flexboxColumn1;
 }
 /* Background Example 01 END */
 
@@ -32,8 +38,21 @@ https://code-gale-online.s3.amazonaws.com/graphics/cgo_blog/plate_4941215.png
 	border: solid purple 2px;
 }
 .background_example_02 .wrapper {
-	width:100%;
-	height: 20em;
-	@include flexboxColumn1;
+	// width:100%;
+	// height: 20em;
+	// @include flexboxColumn1;
 }
 /* Background Example 02 END */
+
+/* Background Example 03 START */
+/* stacking order 
+using pictures
+*/
+.background_example_03 {
+	border: solid green 2px;
+
+	background: url('https://code-gale-online.s3.amazonaws.com/graphics/cgo_blog/plate_4941215.png') center /100px no-repeat,
+		url('https://code-gale-online.s3.amazonaws.com/graphics/cgo_blog/bluesplatter_210819.png') center/cover no-repeat; 
+}
+/* Background Example 03 END */
+

@@ -11,6 +11,30 @@
 	padding: 1em;
 }
 
+/* Background Example 00 START */
+/* the long way to do colour blend
+also see example 07
+ */
+.background_example_00 {
+	border: 2px solid red;
+	background: url('http://lorempixel.com/800/600');
+	position: relative;
+}
+
+.background_example_00 .inner_frame {
+	position: absolute;
+	top:0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: rgba(255,0,0,0.25);
+}
+
+.background_example_00 p {
+	color: white;
+}
+/* Background Example 00 END */
+
 /* Background Example 01 START */
 /* example 
 2 background layers, each positioned differently
